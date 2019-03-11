@@ -3,7 +3,7 @@ import PropType from 'prop-types'
 import WeatherData from  './WeatherData'
 import * as constants from '../../constants/weather'
 import transformWeather from '../../services/transformWeather'
-
+import {api_weater} from '../../constants/api_url'
 
 const data = {
     temperature : 5,
@@ -11,12 +11,6 @@ const data = {
     humidity: 10,
     wind: '10 m/s'
 }
-
-const location = 'London'
-const api_key = '85c426a7a9490e80f373a95533e1ac25'
-const url_base_weather = 'http://api.openweathermap.org/data/2.5/weather'
-
-const api_weater = `${url_base_weather}?q=${location}&appid=${api_key}&units=metric`
 
 class WeatherLocation extends Component {
 
