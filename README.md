@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Before starts
+This project is for educational purposes, i made mistakes : of course but the most important is learn the basics, right?
+
 
 ## Available Scripts
 
