@@ -1,27 +1,25 @@
-import React, {Component} from 'react'
-import PropType from 'prop-types'
-import WeatherData from  './WeatherData'
-import * as constants from '../../constants/weather'
-import transformWeather from '../../services/transformWeather'
-import {api_weater} from '../../constants/api_url'
+import PropType from 'prop-types';
+import React, { Component } from 'react';
+import transformWeather from '../../services/transformWeather';
+import WeatherData from './WeatherData';
+import CircularProgress from '@material-ui/core/CircularProgress'
+import ApiUrl from '../../services/getWeatherByCity_url'
 
 class WeatherLocation extends Component {
-
-    constructor(){
-        super();
-        this.state = {
-            city : 'Loading...',
-            data: null
-        }
-    }
+    constructor(props){
+        super(props);
+        const {city} = props
+        this.state = {city, data: null}
+    } 
 
     componentDidMount() {
-        fetch(api_weater).then(response => response.json())
+
+        let url = ApiUrl(this.state.city)
+
+        fetch(url).then(response => response.json())
         .then(response =>{
             let newWeather = transformWeather(response)       
-            let {name} = response
             this.setState({
-                city : name,
                 data : newWeather
             })
         })
@@ -36,7 +34,7 @@ class WeatherLocation extends Component {
             
             <div>
                 <h1>{city}</h1>
-                {data ? <WeatherData data={data}></WeatherData> : ""}
+                {data ? <WeatherData data={data}></WeatherData> : <CircularProgress/>}
             </div>
         );
     }

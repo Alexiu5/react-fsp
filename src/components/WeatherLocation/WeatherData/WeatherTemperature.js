@@ -7,14 +7,22 @@ import {
     FOG,
     HAIL,
     CLOUDWIND,
+    THUNDER,
+    SNOW,
+    DRIZZLE,
+    RAIN
 } from '../../../constants/weather'
 
 const icons = {
+    [CLOUD] : 'cloudy',
     [SUNNY] : 'day-sunny',
     [FOG]: 'day-fog',
     [HAIL]: 'hail',
     [CLOUDWIND]: 'cloudy-windy',
-    [CLOUD] : 'cloudy'
+    [THUNDER] : 'day-thunder',
+    [SNOW]: 'snow',
+    [DRIZZLE]: 'day-showers',
+    [RAIN]:'rain'
 }
 
 const getWeatherIcon = (weatherState) =>{

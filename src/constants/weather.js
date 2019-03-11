@@ -3,4 +3,8 @@ export const SUNNY = 'sunny'
 export const FOG = 'fog'
 export const HAIL = 'hail'
 export const CLOUDWIND = 'cloudyWindy'
+export const THUNDER = 'thunder'
+export const DRIZZLE = 'drizzle'
+export const RAIN = 'rain'
+export const SNOW = 'snow'
 
