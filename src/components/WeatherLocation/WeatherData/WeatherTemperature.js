@@ -29,13 +29,13 @@ const getWeatherIcon = (weatherState) =>{
     if(weatherState === '') weatherState = 'cloudyWindy'
 
     const icon = icons[weatherState]
-    return ( <WeatherIcons name = {icon} size="3x"/>)
+    return ( <WeatherIcons name = {icon} size="2x"/>)
 }
 
 
 const WeatherTemperature = ({temperature, weatherState})=>{
     return (
-        <div>
+        <div className="icon-item">
             {
                 getWeatherIcon(weatherState)
             }

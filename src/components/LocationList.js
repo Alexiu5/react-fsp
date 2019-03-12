@@ -1,18 +1,38 @@
 import React from 'react'
 import Location from './WeatherLocation'
 import PropTypes from 'prop-types'
+import './locationList.css'
 
 
-const getLstComponents = cities => (cities.map(city => <Location city={city}></Location>))
-const LocationList = ({cities})=>{
+
+const LocationList = ({cities, onClickedWeather})=>{
+
+    const handleWeatherClick = city =>{
+        console.log(city)
+        onClickedWeather(city)
+    }
+
+    const getLstComponents = cities => (cities.map(city => {
+
+       return (
+        <Location 
+            key={city} 
+            city={city}
+            onWeatherClick= {()=> handleWeatherClick(city)}></Location>
+        )
+    }))
+    
+
+
     return (
-        <div>
+        <div className="LocationContainer">
             {getLstComponents(cities)}
         </div>)
 }
 
 LocationList.propType = {
-    cities: PropTypes.array.isRequired
+    cities: PropTypes.array.isRequired,
+    onClickedWeather:PropTypes.func,
 }
 
 export default LocationList

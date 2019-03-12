@@ -6,12 +6,11 @@ import './style.css'
 
 const WeatherData = ({data : {temperature, weatherState, humidity, wind}})=>{
     return (
-        <div className="weatherDataContainer">
+        
             <div className="item">
                 <WeatherTemperature temperature={temperature} weatherState={weatherState} />
                 <WeatherExtraInfo humidity={humidity} wind={wind}/>
             </div>
-        </div>
     )
 }
 
