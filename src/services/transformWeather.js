@@ -18,7 +18,8 @@ const transformWeather = weather_data=>{
         temperature : temp,
         weatherState :state,
         humidity:humidity ,
-        wind: `${speed} m/s`
+        wind: `${speed} m/s`,
+        name : weather_data.name
     }
 
     return data

@@ -8,12 +8,10 @@ import './locationList.css'
 const LocationList = ({cities, onClickedWeather})=>{
 
     const handleWeatherClick = city =>{
-        console.log(city)
         onClickedWeather(city)
     }
 
     const getLstComponents = cities => (cities.map(city => {
-
        return (
         <Location 
             key={city} 

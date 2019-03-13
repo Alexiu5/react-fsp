@@ -13,9 +13,7 @@ class WeatherLocation extends Component {
     } 
 
     componentDidMount() {
-
         let url = ApiUrl(this.state.city)
-
         fetch(url).then(response => response.json())
         .then(response =>{
             let newWeather = transformWeather(response)       
@@ -31,10 +29,9 @@ class WeatherLocation extends Component {
     
     render(){ 
         const { onWeatherClick } = this.props
-        const { city, data } = this.state
+        const { data } = this.state
         return (
             <div onClick={onWeatherClick} >
-                <h1>{city}</h1>
                 {data ? <WeatherData data={data}></WeatherData> : <CircularProgress/>}
             </div>
         );
