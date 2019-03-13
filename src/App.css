@@ -38,11 +38,16 @@
 
 .item{
   background-color: rgba(117,164,139,1);
+  max-width: 300px;
 }
-
 
 .item span{
   font-weight: 100;
+}
+
+#PageTitle{
+  font-size: 2rem;
+  text-transform: capitalize;
 }
 
 
