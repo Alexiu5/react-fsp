@@ -10,7 +10,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      city: ''
+      city: null
     }
   }
 
@@ -22,8 +22,8 @@ class App extends Component {
   }
 
   render() {
-    
-    return (
+    const {city} = this.state
+    return ( 
       <Grid>
         <Row>
           <h1 id="PageTitle"> Worldwide weather <span role="img" aria-label="Earth">🌎</span>
@@ -34,7 +34,9 @@ class App extends Component {
             <LocationList cities={cities} onClickedWeather={this.handleCickedWeather}></LocationList>
           </Col>
           <Col xs={12} md={6}>
-            <ForecastExtended city={this.state.city}></ForecastExtended>
+            {
+              city && <ForecastExtended city={city}></ForecastExtended>
+            }
           </Col>
         </Row>
       </Grid>

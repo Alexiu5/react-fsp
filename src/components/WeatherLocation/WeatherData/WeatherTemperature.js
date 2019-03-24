@@ -19,7 +19,7 @@ const icons = {
     [FOG]: 'day-fog',
     [HAIL]: 'hail',
     [CLOUDWIND]: 'cloudy-windy',
-    [THUNDER] : 'day-thunder',
+    [THUNDER] : 'day-thunderstorm',
     [SNOW]: 'snow',
     [DRIZZLE]: 'day-showers',
     [RAIN]:'rain'
@@ -29,7 +29,7 @@ const getWeatherIcon = (weatherState) =>{
     if(weatherState === '') weatherState = 'cloudyWindy'
 
     const icon = icons[weatherState]
-    return ( <WeatherIcons name = {icon} size="2x"/>)
+    return ( <WeatherIcons name = {icon} size="1.5x"/>)
 }
 
 
