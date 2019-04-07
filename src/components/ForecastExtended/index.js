@@ -14,10 +14,11 @@ class ForecastExtended extends Component {
 
     componentDidMount(){
         //fetch or axios for weather map
-        const url_forecast = `${url_base_forecast}?q=${this.props.city}%appid=${api_key}`
+        const url_forecast = `${url_base_forecast}?q=${this.props.city}&appid=${api_key}`
         fetch(url_forecast)
             .then((response)=> response.json)
             .then(response => {
+                debugger;
                 const forecastData = transformForecast(response)
                 this.setState({forecastData})
             })
