@@ -9,7 +9,7 @@ const getWeatherState = ({id}) =>{
     else return constants.CLOUD
 }
 
-const transformWeather = weather_data=>{
+const transformWeather = weather_data =>{
     const {humidity, temp} = weather_data.main
     const {speed} = weather_data.wind
     const state = getWeatherState(weather_data.weather[0]);

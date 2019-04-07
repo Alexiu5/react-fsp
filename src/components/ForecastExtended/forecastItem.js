@@ -8,7 +8,7 @@ const forecastItem = ({weekDay, hour})=>{
         temperature: 10,
         weatherState:constants.CLOUD,
         humidity:25,
-        wind:12,
+        wind:'12',
         name: `${weekDay}`
     }
     
