@@ -15,7 +15,7 @@ class ForecastExtended extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(this.props.city != nextProps.city){
+        if(this.props.city !== nextProps.city){
             this.setState({forecastData:null})
             this.updateCity(nextProps.city)
         }
@@ -47,10 +47,10 @@ class ForecastExtended extends Component {
         const {city} = this.props
         const {forecastData} = this.state
         return (
-            <React.Fragment>
+            <div id="forecastContainer">
                 <h2 className="detailContainer"> Forecast Extended for: {city}</h2>
                 {forecastData ? this.printForecasts() : this.renderProgress() }
-            </React.Fragment>
+            </div>
         )
     }
 }

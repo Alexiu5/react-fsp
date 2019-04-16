@@ -5,10 +5,10 @@ import WeatherData from '../WeatherLocation/WeatherData/'
 const forecastItem = ({weekDay, hour, data})=>{
     
     return (
-        <div>
+        <React.Fragment>
             <h3>{weekDay} Hora: {hour}Hrs.</h3>
             <WeatherData data={data}></WeatherData>
-        </div>
+        </React.Fragment>
     )
 }
 

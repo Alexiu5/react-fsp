@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import LocationList from './components/LocationList'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import ForecastExtended from './components/ForecastExtended'
+import {setCity} from './actions'
+import {store} from './store'
 import './App.css';
+
 
 const cities = ['Envigado, col', 'Bello, col', 'Sabaneta, col', 'Medellín, col']
 class App extends Component {
-
   constructor(){
     super();
     this.state = {
@@ -19,6 +21,7 @@ class App extends Component {
       city
     })
 
+    store.dispatch(setCity(city))
   }
 
   render() {
