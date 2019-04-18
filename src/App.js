@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import LocationList from './components/LocationList'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import ForecastExtended from './components/ForecastExtended'
-import {setCity} from './actions'
-import {store} from './store'
+import LocationList from './containers/locationList'
 import './App.css';
 
 
@@ -16,14 +14,6 @@ class App extends Component {
     }
   }
 
-  handleCickedWeather = city => {
-    this.setState({
-      city
-    })
-
-    store.dispatch(setCity(city))
-  }
-
   render() {
     const {city} = this.state
     return ( 
@@ -34,7 +24,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col xs={12} md={6}>
-            <LocationList cities={cities} onClickedWeather={this.handleCickedWeather}></LocationList>
+            <LocationList cities={cities}></LocationList>
           </Col>
           <Col xs={12} md={6}>
             {
@@ -43,7 +33,8 @@ class App extends Component {
           </Col>
         </Row>
       </Grid>
-    );
+    ) //End return 
   }
 }
-export default App;
+
+export default App
