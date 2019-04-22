@@ -14,9 +14,10 @@ const LocationList = ({cities, onClickedWeather})=>{
     const getLstComponents = cities => (cities.map(city => {
        return (
         <Location 
-            key={city} 
-            city={city}
-            onWeatherClick= {()=> handleWeatherClick(city)}></Location>
+            key={city.key} 
+            city={city.name}
+            onWeatherClick= {()=> handleWeatherClick(city.name)}
+            data={city.data}></Location>
         )
     }))
     
