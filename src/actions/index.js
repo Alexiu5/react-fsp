@@ -2,7 +2,7 @@ import {api_key , url_base_forecast} from '../constants/api_url'
 import transformForecast from '../services/transformForecast'
 
 
-export const  SET_CITY = 'SET_CITY'
+export const SET_CITY = 'SET_CITY'
 export const SET_FORECAST_DATA = 'SET_FORECAST_DATA'
 
 const setCity = payload => ({type: SET_CITY, payload})
