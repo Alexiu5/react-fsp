@@ -25,7 +25,7 @@ const LocationList = ({cities, onClickedWeather})=>{
 
     return (
         <div>
-            {getLstComponents(cities)}
+            {cities &&  getLstComponents(cities) }
         </div>)
 }
 

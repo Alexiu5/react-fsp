@@ -3,12 +3,16 @@ import LocationList from '../components/LocationList'
 import {connect} from 'react-redux'
 import { setSelectedCity, setWeather } from '../actions/index'
 import PropTypes from 'prop-types';
-import {getWeatherCities} from '../reducers/'
+import {getWeatherCities, getCity} from '../reducers/'
+
 
 class locationListContainer extends Component {
-    constructor(){
-        super();
-        // this.props.setWeather(this.props.cities)
+
+    componentDidMount(){
+        const {setWeather, setCity, cities, city} = this.props
+        debugger
+        setWeather(cities)
+        city && setCity(city)
     }
 
     handleCickedWeather = city => {
@@ -26,6 +30,7 @@ locationListContainer.propTypes = {
  setCity: PropTypes.func.isRequired,
  cities: PropTypes.array.isRequired, 
  citiesWeather: PropTypes.array,
+ city: PropTypes.string
 };
 
 const mapDispatchToPropsActions = dispatch =>({
@@ -34,7 +39,8 @@ const mapDispatchToPropsActions = dispatch =>({
 })
 
 const mapStateToProps = state =>({
-    citiesWeather: getWeatherCities(state)
+    citiesWeather: getWeatherCities(state),
+    city: getCity(state)
 })
 const AppConnected = connect(mapStateToProps, mapDispatchToPropsActions)(locationListContainer)
   

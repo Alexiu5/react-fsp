@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 import reducers from '../reducers/'
 
 const initialState = {
-    city: ''
+    city: 'Envigado, col'
 };
 
 

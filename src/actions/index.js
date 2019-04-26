@@ -40,8 +40,8 @@ export const setWeather = payload =>{
             fetch(url)
             .then(response => response.json())
             .then(response =>{
-                let data = transformWeather(response)  
-                dispatch(setWeatherCity({city, data}))
+                let weather = transformWeather(response)  
+                dispatch(setWeatherCity({city, weather}))
             })
         })
     }
